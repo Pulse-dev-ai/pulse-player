@@ -1,0 +1,88 @@
+pulse-player/
+├── index.html
+├── wavesurfer.min.js
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pulse Player</title>
+  <style>
+    body {
+      background-color: #0A0A23;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      padding: 2rem;
+    }
+
+    .track {
+      margin-bottom: 3rem;
+    }
+
+    .track h2 {
+      color: #FFD700;
+      font-size: 1.5rem;
+    }
+
+    .track p {
+      color: #ccc;
+      margin-bottom: 1rem;
+    }
+
+    .waveform {
+      border-radius: 4px;
+      margin-bottom: 1rem;
+    }
+
+    .play-btn {
+      background: #FFD700;
+      color: #0A0A23;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="track">
+    <h2>Chasing Echoes</h2>
+    <p>A moody, hip-hop-infused soundscape combining AI beat layering and human instrumental depth—perfect for modern branding.</p>
+    <div id="waveform1" class="waveform"></div>
+    <button class="play-btn" onclick="wavesurfer1.playPause()">Play / Pause</button>
+  </div>
+
+  <div class="track">
+    <h2>Cloudbound</h2>
+    <p>An ethereal ambient track driven by AI-generated harmonics and serene textures—ideal for film and immersive brand stories.</p>
+    <div id="waveform2" class="waveform"></div>
+    <button class="play-btn" onclick="wavesurfer2.playPause()">Play / Pause</button>
+  </div>
+
+  <script src="wavesurfer.min.js"></script>
+  <script>
+    const wavesurfer1 = WaveSurfer.create({
+      container: '#waveform1',
+      waveColor: '#4444aa',
+      progressColor: '#FFD700',
+      height: 80,
+      responsive: true
+    });
+
+    wavesurfer1.load('https://docs.google.com/uc?export=download&id=1srTsHHDyWu67nAxK-hQtFDRSxLQ1Z1qV');
+
+    const wavesurfer2 = WaveSurfer.create({
+      container: '#waveform2',
+      waveColor: '#4444aa',
+      progressColor: '#FFD700',
+      height: 80,
+      responsive: true
+    });
+
+    wavesurfer2.load('https://docs.google.com/uc?export=download&id=1iamopPiO9AQXWOn0DRumL1Oh02wsyDYq');
+  </script>
+</body>
+</html>
+<script src="https://unpkg.com/wavesurfer.js"></script>
